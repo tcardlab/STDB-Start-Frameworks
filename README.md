@@ -13,19 +13,9 @@ SpacetimeDB getting started tutorial in various frontend frameworks.
 
 ### STDB Setup:
 
+<!--
 <details open>
 <summary> Transient Setup </summary>
-<!-- kinda hoped this would work...
-  ```sh
-  # Start DB Server (in this directory)
-  spacetime start .spacetime -l="localhost:5000" --in-memory
-  ```
-  open new terminal 
-  ```sh
-  # Publish Module
-  spacetime publish "stdb-start" -s="http://localhost:5000" --project-path server -a
-  ```
--->
 
 ```sh
 # Start DB Server (in this directory)
@@ -42,13 +32,15 @@ spacetime publish "stdb-start-db" -p="server"
 
 May need to clean anon identity later
 ```sh
+# requires owner ID be active (or set manually)
 spacetime delete "stdb-start-db" -s="stdb-start-server" --force
 spacetime server remove "stdb-start-server" --delete-identities
 ```
 </details>
+-->
 
-<details>
-<summary> Robust Setup </summary>
+<details open>
+<summary> <h4>Setup</h4> </summary>
 
 ```sh
 # start Server
@@ -61,16 +53,24 @@ open new terminal
 # Register Server and Set Default (Global)
 spacetime server add http://localhost:5000 "stdb-start-server" -d
 
-# Fingerprint (Remove potentially obsolete identities)
-# spacetime server fingerprint -I
-
 # Create Identity on Server and Set Default
 spacetime identity new -s="stdb-start-server" -n="stdb-start-owner" -d --no-email
 
 # Publish Module
 spacetime publish "stdb-start-db" --project-path server
 ```
+</details>
 
+<br/>
+
+<details>
+<summary> <h4>How To Cleanup Later</h4> </summary>
+
+```sh
+# requires owner ID be active (or set manually)
+spacetime delete "stdb-start-db" -s="stdb-start-server" -i="stdb-start-owner" --force
+spacetime identity remove "stdb-start-owner"
+```
 </details>
 
 
