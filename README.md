@@ -18,6 +18,11 @@ SpacetimeDB getting started tutorial in various frontend frameworks.
 <details open>
 <summary> <h4>Setup</h4> </summary>
 
+<!--
+  My goal for this set up is not to merely be as simple as possible (ie scripting it away). Rather, its to introduce
+  people to the general aspects of managing a server and identity in STDB (primarily creation and cleanup). 
+-->
+
 ```sh
 # start Server
 spacetime start .spacetime -l="localhost:5000" 
@@ -28,9 +33,11 @@ open new terminal
 ```sh
 # Register Server and Set Default (Global)
 spacetime server add http://localhost:5000 "stdb-start-server" -d
+# If already added: spacetime server set-default "stdb-start-server"
 
 # Create Identity on Server and Set Default
 spacetime identity new -s="stdb-start-server" -n="stdb-start-owner" -d --no-email
+# If already added: spacetime identity set-default "stdb-start-owner"
 
 # Publish Module
 spacetime publish "stdb-start-db" --project-path server
@@ -43,7 +50,9 @@ spacetime publish "stdb-start-db" --project-path server
 <summary> <h4>How To Cleanup Later</h4> </summary>
 
 ```sh
-# requires owner ID be active (or set manually)
+# Because .spacetime was generated locally, 
+# you could just delete that directory without side effects (a nuclear solution). 
+# Here is the precision-method:
 spacetime delete "stdb-start-db" -s="stdb-start-server" -i="stdb-start-owner" --force
 spacetime identity remove "stdb-start-owner"
 ```
@@ -67,6 +76,9 @@ cd framework/xyz
 npm i 
 npm start
 ```
+
+**Common Errors:**
+If you keep being re-assigned a new identity, you probably have an invalid ID in localStorage (prob from an old project or database/server). Just delete that value and it should work as expected. (I'll add an error handler to do this automatically eventually)  
 
 
 ## Deving

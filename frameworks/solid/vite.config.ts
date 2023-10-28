@@ -3,6 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 import { join } from 'path';
 
 export default defineConfig({
+  cacheDir:'../../node_modules/.vite',
   plugins: [
     solidPlugin(),
   ],
