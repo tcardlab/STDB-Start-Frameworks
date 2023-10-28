@@ -1,6 +1,8 @@
 # STDB-Start-Frameworks
 SpacetimeDB getting started tutorial in various frontend frameworks.
 
+> Only Vue and Solid are set up atm, will chip away at the others over time.
+
 <!-- 
   NOTE: 
     i wonder if it makes sense to use a local .spacetime/
@@ -12,32 +14,6 @@ SpacetimeDB getting started tutorial in various frontend frameworks.
 ## Getting Started
 
 ### STDB Setup:
-
-<!--
-<details open>
-<summary> Transient Setup </summary>
-
-```sh
-# Start DB Server (in this directory)
-spacetime start .spacetime -l="localhost:5000" --in-memory
-```
-open new terminal 
-```sh
-# Register Server and Set Default (Global)
-spacetime server add http://localhost:5000 "stdb-start-server" -d
-
-# Publish Module
-spacetime publish "stdb-start-db" -p="server"
-```
-
-May need to clean anon identity later
-```sh
-# requires owner ID be active (or set manually)
-spacetime delete "stdb-start-db" -s="stdb-start-server" --force
-spacetime server remove "stdb-start-server" --delete-identities
-```
-</details>
--->
 
 <details open>
 <summary> <h4>Setup</h4> </summary>
