@@ -16,7 +16,7 @@
 
   /**  Create your SpacetimeDB client  **/
   let token = localStorage.getItem('auth_token') || undefined;
-  let spacetimeDBClient = new SpacetimeDBClient("wss://testnet.spacetimedb.com", "stdb-chat-tut", token);
+  let spacetimeDBClient = new SpacetimeDBClient("localhost:5000", "stdb-start-db", token);
 
   const newName = ref(""); // setNewName
   const settingName = ref(false); //setSettingName

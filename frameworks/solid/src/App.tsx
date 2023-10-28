@@ -20,7 +20,7 @@ export type MessageType = {
 
 /**  Create your SpacetimeDB client  **/
 let token = localStorage.getItem('auth_token') || undefined;
-let spacetimeDBClient = new SpacetimeDBClient("wss://testnet.spacetimedb.com", "stdb-chat-tut", token);
+let spacetimeDBClient = new SpacetimeDBClient("localhost:5000", "stdb-start-db", token);
 
 const App: Component = () => {
   const [newName, setNewName] = createSignal("");
@@ -169,7 +169,7 @@ const App: Component = () => {
     <div class={styles.App}>
       <div class="profile">
         <h1>Profile</h1>
-        {!settingName ? (
+        {!settingName() ? (
           <>
             <p>{name()}</p>
             <button
