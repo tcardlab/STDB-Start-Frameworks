@@ -1,0 +1,19 @@
+{
+  "name": "stdb-start",
+  "version": "1.0.0",
+  "description": "SpacetimeDB getting started tutorial in various frontend frameworks.",
+  "main": "index.js",
+  "scripts": {
+    "gen:TS(pre)": "spacetime generate --lang typescript --out-dir ./module_bindings --project-path server",
+    "gen:SFE": "tsx scripts/gen_sfe.ts ./module_bindings",
+    "gen:TS": "npm run gen:TS(pre) && npm run gen:SFE"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "frameworks/*"
+  ],
+  "devDependencies": {
+    "tsx": "^3.14.0"
+  }
+}
