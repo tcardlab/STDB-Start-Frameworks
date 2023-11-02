@@ -1,7 +1,7 @@
 # STDB-Start-Frameworks
 SpacetimeDB getting started tutorial in various frontend frameworks.
 
-> Only Vue and Solid are set up atm, will chip away at the others over time.
+> Only Vue, Solid, and Mitosis(vue, react, svelte) are set up atm, will chip away at the others over time.
 
 <!-- 
   NOTE: 
