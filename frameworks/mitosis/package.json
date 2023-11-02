@@ -1,0 +1,42 @@
+{
+  "name": "mitosis-chat",
+  "version": "1.0.0",
+  "description": "",
+  "entry": "./main.ts",
+  "scripts": {
+    "start:Vite": "node ./scripts/server.js",
+    "start": "npm run build && node scripts/server",
+    "mitosis": "mitosis build --config=\"mitosis.config.cjs\"",
+    "build": "npm run mitosis --config=\"mitosis.config.cjs\"",
+    "watch": "watch \"npm run mitosis --config=\"mitosis.config.cjs\"\" ./src",
+    "gen:STDB": "cd .. && spacetime generate --lang typescript --out-dir client/module_bindings --project-path server",
+    "gen": "npm run gen:STDB && tsx gen_sfe.ts module_bindings"
+  },
+  "type": "module",
+  "exports": {
+    "./*": "./output/*/src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clockworklabs/spacetimedb-sdk": "^0.7.0",
+    "vue": "^3.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-jsx": "^5.1.2"
+  },
+  "devDependencies": {
+    "@builder.io/eslint-plugin-mitosis": "^0.0.15",
+    "@builder.io/mitosis": "^0.0.122",
+    "@builder.io/mitosis-cli": "^0.0.80",
+    "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vitejs/plugin-react": "^4.1.0",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "eslint": "^8.52.0",
+    "tsx": "^3.14.0",
+    "vite": "^4.5.0",
+    "watch": "^1.0.2"
+  }
+}

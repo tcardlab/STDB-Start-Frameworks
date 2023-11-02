@@ -70,6 +70,9 @@ npm i -w=frameworks/vue # or your framework of choice
 
 # run framework
 npm start -w framework/xyz
+# mitosis:
+#   npm start <framework: vue|svelte|react> -w=frameworks/mitosis
+#   npm start vue -w=frameworks/mitosis
 
 # or
 cd framework/xyz 
