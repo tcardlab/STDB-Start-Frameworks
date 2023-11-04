@@ -24,7 +24,7 @@ SpacetimeDB getting started tutorial in various frontend frameworks.
 -->
 
 ```sh
-# start Server
+# Start Server (with local `.spacetime` DB directory)
 spacetime start .spacetime -l="localhost:5000" 
 ```
 
