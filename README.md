@@ -66,7 +66,7 @@ npm i
 
 # install just one framework
 npm i --workspaces=false # init root deps
-npm i -w=frameworks/vue # or your framework of choice
+npm i -w=frameworks/vue # framework of choice
 
 # run framework
 npm start -w framework/xyz
